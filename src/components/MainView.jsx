@@ -10,6 +10,13 @@ const MainView = () => {
     const handleInputChange = (e) => {
         setFighterName(e.target.value);
     };
+
+    const handleKeyPress = (e) => {
+        if(e.key === 'Enter'){
+            handleSubmit();
+        }
+
+    }
     
     // TODO: Create api with fighter data
     const handleSubmit = () => {
@@ -35,9 +42,9 @@ const MainView = () => {
                 placeholder="Enter fighter's name"
                 value={fighterName}
                 onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
                 className="fighter-input"
             />
-            <button onClick={handleSubmit}>Submit</button>
             <table className="hints-table">
                 <thead>
                     <tr>
